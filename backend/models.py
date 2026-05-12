@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Text
-from database import Base
+from .database import Base
 
 # define the flower model
 class Flower(Base):

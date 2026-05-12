@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project: BUD</title>
+  </head>
+  <body>
+
+  <h1>Project: BUD</h1>
+  
+  <label for="community">Select a plant community:</label>
+
+  <!-- dropdown menu populated via getCommunities-->
+  <select id="communities">
+    <option value="">Communities...</option>
+  </select>
+
+  <!--fetch items for dropdown list-->
+  <script>
+    async function getCommunities() {
+      try{
+        // fetch data
+        const community_list = await fetch("http://localhost:8000/procure-communities");
+        // convert to json
+        const communities_array = await community_list.json();
+        communities_array.forEach(community => {
+          const opt = new Option(community);
+          document.getElementById("communities").add(opt)
+        });
+      } catch (error) {
+        console.error("Failed to fetch data:", error);
+      }
+    }
+    
+    // call this function on page load to populate list
+    window.onload = getCommunities;
+  </script>
+
+  </body>
+</html>

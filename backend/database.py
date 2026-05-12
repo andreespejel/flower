@@ -16,8 +16,5 @@ engine = create_engine(db_url)
 # create declarative base class
 Base = declarative_base()
 
-# create (single)table in the engine
-Base.metadata.create_all(engine)
-
 # create a session
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)

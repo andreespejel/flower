@@ -1,4 +1,3 @@
-from typing import Annotated
 from database import SessionLocal
 
 # define get_db, 
