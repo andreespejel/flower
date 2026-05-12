@@ -24,14 +24,16 @@ This information will be local to California at first, eventually expanding the 
    
 ---  
 Current Task:  
-- Connect FastAPI and Postgres containers w/ docker compose  
+- Connect frontend, backend, and Postgres containers w/ docker compose  
    
 Next Task:  
 - Move DB from DataGrip to Postgres container  
-- Build frontend web interface (call API, take input, etc.)  
+- update frontend to do something when you select a community  
    
-Completed Tasks:   
-- write main.py  
+Completed Tasks:  
+- call route to auto-populate drop-down menu with data from postgres. modify data to be a JSON of strings rather than CSV's in db  
+- write frontend  
+- write main.py + connect to models, schemas, database  
 - Connect FastAPI to Postgres, build api endpoints  
 - Define database models in FastAPI  
 - Build Postgres db with the capacity to store the information I need:  
