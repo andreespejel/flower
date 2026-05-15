@@ -36,7 +36,7 @@ def deduplicate(deduplicate_list): # take in list of communities, remove duplica
 @app.get("/procure-communities", response_model=list[str]) # endpoint
 def procure_habitat(db: Session = Depends(get_db)): # 
     results = db.execute(select(Flower.communities)).all()
-    communities_list = [row[0] for row in results]
+    communities_list = [row[0] for row in results if row[0] is not None]
     # call deduplicate
     communities_list = deduplicate(communities_list)
     return communities_list
